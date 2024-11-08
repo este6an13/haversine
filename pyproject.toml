@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "haversine"
+version = "0.1.0"
+description = ""
+authors = ["este6an13 <diquintero@unal.edu.co>"]
+readme = "README.md"
+package-mode = true
+
+packages = [
+    { include = "src", from = "." }
+]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+flask = "^3.0.3"
+sqlalchemy = "^2.0.36"
+flask-restx = "^1.3.0"
+pytest = "^8.3.3"
+fastapi = "^0.115.4"
+httpx = "^0.27.2"
+uvicorn = "^0.32.0"
+structlog = "^24.4.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
