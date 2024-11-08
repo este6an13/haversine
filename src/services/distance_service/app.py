@@ -1,12 +1,13 @@
-from fastapi import FastAPI, BackgroundTasks
-from pydantic import BaseModel
-from src.services.distance_service.pubsub import request_queue, response_queue
-from src.database.repositories.location_repository import LocationRepository
-from src.database.db import get_session
-from src.services.distance_service.utils import calculate_distance
-from src.logger import get_logger
 import threading
 
+from fastapi import BackgroundTasks, FastAPI
+from pydantic import BaseModel
+
+from src.database.db import get_session
+from src.database.repositories.location_repository import LocationRepository
+from src.logger import get_logger
+from src.services.distance_service.pubsub import request_queue, response_queue
+from src.services.distance_service.utils import calculate_distance
 
 app = FastAPI(
     title="Distance API",

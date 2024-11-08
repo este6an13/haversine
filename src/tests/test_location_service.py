@@ -1,6 +1,7 @@
 import pytest
-from src.database.models import Location
 from fastapi.testclient import TestClient
+
+from src.database.models import Location
 
 
 @pytest.mark.parametrize(

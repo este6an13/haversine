@@ -1,10 +1,10 @@
-from fastapi import FastAPI, Depends, HTTPException
+from fastapi import Depends, FastAPI, HTTPException
 from pydantic import BaseModel, Field, ValidationError
 from sqlalchemy.orm import Session
-from src.database.repositories.location_repository import LocationRepository
-from src.database.db import get_session, init_db
-from src.logger import get_logger
 
+from src.database.db import get_session, init_db
+from src.database.repositories.location_repository import LocationRepository
+from src.logger import get_logger
 
 app = FastAPI(
     title="Location API",

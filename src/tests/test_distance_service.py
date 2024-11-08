@@ -1,7 +1,9 @@
-import pytest
 from math import isclose
-from src.services.distance_service.utils import haversine, calculate_distance
+
+import pytest
+
 from src.database.models import Location
+from src.services.distance_service.utils import calculate_distance, haversine
 
 
 @pytest.mark.parametrize(

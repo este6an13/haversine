@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  location-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./src:/app/src
+    command: poetry run python src/services/location_service/app.py
+    networks:
+      - haversine-network
+
+  distance-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5001:5001"
+    volumes:
+      - ./src:/app/src
+    command: poetry run python src/services/distance_service/app.py
+    depends_on:
+      - location-service
+    networks:
+      - haversine-network
+
+networks:
+  haversine-network:
+    driver: bridge

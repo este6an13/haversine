@@ -2,11 +2,11 @@ import pytest
 from fastapi.testclient import TestClient
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
-from src.database.repositories.location_repository import LocationRepository
-from src.database.models import Base
-from src.database.db import get_session
-from src.services.location_service.app import app as location_app
 
+from src.database.db import get_session
+from src.database.models import Base
+from src.database.repositories.location_repository import LocationRepository
+from src.services.location_service.app import app as location_app
 
 # Database URL with in-memory SQLite and multi-threading enabled
 TEST_DATABASE_URL = "sqlite:///:memory:"

@@ -1,5 +1,6 @@
-import structlog
 import logging
+
+import structlog
 
 # Configure standard logging to integrate with structlog
 logging.basicConfig(
